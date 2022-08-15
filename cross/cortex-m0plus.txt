@@ -1,6 +1,6 @@
 [constants]
 common_args = ['--target=armv6m-none-eabi']
-compile_args = ['-mthumb']
+compile_args = ['-mcpu=cortex-m0plus','-mthumb','-mfloat-abi=soft']
 
 [host_machine]
 system = 'Generic'
