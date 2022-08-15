@@ -1,3 +1,4 @@
 [wrap-git]
 url = git@github.com:djazo/FreeRTOS-Kernel.git
 revision = mesons
+depth = 1
