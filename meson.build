@@ -23,13 +23,14 @@ picolibc_proj = subproject('picolibc',
 picolibc_dep = picolibc_proj.get_variable('picolibc_dep')
 
 # freertos
-
-freertos_config_inc = include_directories('freertos')
+freertos_config_proj = subproject('freertos_config')
+freertos_config_dep = freertos_config_proj.get_variable('freertos_config_dep')
 freertos_proj = subproject('freertos',
   default_options: [
     'freertos_port=@0@'.format(host_machine.cpu()),
     'freertos_heap=1'
     ]
+  )
 
 freertos_dep = freertos_proj.get_variable('freertos_dep')
 
