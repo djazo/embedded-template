@@ -1,19 +1,15 @@
 project('Embeddedreality sdk',
-  ['cpp'],
+  ['c','cpp'],
   default_options: [
     'warning_level=3',
     'werror=false',
     'cpp_std=c++17', 'build.cpp_std=c++17',
     'debug=false',
     'optimization=s',
+    'default_library=static',
     ],
   license: 'MIT',
   meson_version: '>=0.60.0')
-
-# freertos
-
-freertos_proj = subproject('freertos')
-freertos_dep = freertos_proj.get_variable('freertos_dep')
 
 # picolibc
 
@@ -23,6 +19,11 @@ picolibc_proj = subproject('picolibc',
     ]
   )
 picolibc_dep = picolibc_proj.get_variable('picolibc_dep')
+
+# freertos
+
+freertos_proj = subproject('freertos')
+freertos_dep = freertos_proj.get_variable('freertos_dep')
 
 # llvm stuff
 
