@@ -1,3 +1,6 @@
+[constants]
+toolchain = '/opt/homebrew/opt/llvm/bin'
+
 [binaries]
 c = toolchain / 'clang'
 cpp = toolchain / 'clang++'
