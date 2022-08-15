@@ -23,6 +23,14 @@ picolibc_proj = subproject('picolibc',
   )
 picolibc_dep = picolibc_proj.get_variable('picolibc_dep')
 
+
+# llvm stuff
+
+llvm_proj = subproject('llvm')
+compiler_rt_dep = llvm_proj.get_variable('compiler_rt_dep')
+libcxxabi_dep = llvm_proj.get_variable('libcxxabi_dep')
+libcxx_dep = llvm_proj.get_variable('libcxx_dep')
+
 # freertos
 freertos_config_proj = subproject('freertos_config')
 freertos_config_dep = freertos_config_proj.get_variable('freertos_config_dep')
@@ -34,11 +42,3 @@ freertos_proj = subproject('freertos',
   )
 
 freertos_dep = freertos_proj.get_variable('freertos_dep')
-
-# llvm stuff
-
-llvm_proj = subproject('llvm')
-compiler_rt_dep = llvm_proj.get_variable('compiler_rt_dep')
-libcxxabi_dep = llvm_proj.get_variable('libcxxabi_dep')
-libcxx_dep = llvm_proj.get_variable('libcxx_dep')
-
