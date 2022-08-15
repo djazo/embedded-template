@@ -1,0 +1,16 @@
+[constants]
+common_args = ['--target=armv7em-none-eabi']
+compile_args = ['-mthumb', '-mfpu=-mfpu=fpv4-sp-d16','-mfloat-abi=hard']
+
+[host_machine]
+system = 'Generic'
+cpu_family = 'arm'
+cpu = 'cortex-m4'
+endian = 'little'
+
+[built-in options]
+c_args = common_args + compile_args
+cpp_args = common_args + compile_args
+c_link_args = common_args
+cpp_link_args = common_args
+

@@ -1,0 +1,16 @@
+[binaries]
+c = toolchain / 'clang'
+cpp = toolchain / 'clang++'
+c_ld = toolchain / 'ld.lld'
+cpp_ld = toolchain / 'ld.lld'
+ar = toolchain / 'llvm-ar'
+as = toolchain / 'llvm-as'
+nm = toolchain / 'llvm-nm'
+readelf = toolchain / 'llvm-readelf'
+ranlib = toolchain / 'llvm-ranlib'
+objcopy = toolchain / 'llvm-objcopy'
+strip = toolchain / 'llvm-strip'
+
+[properties]
+needs_exe_wrapper = true
+skip_sanity_check = true
