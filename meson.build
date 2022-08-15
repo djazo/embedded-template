@@ -18,6 +18,7 @@ fs = import('fs')
 picolibc_proj = subproject('picolibc',
   default_options: [
     'multilib=false',
+    'picocrt=false'
     ]
   )
 picolibc_dep = picolibc_proj.get_variable('picolibc_dep')
