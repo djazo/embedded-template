@@ -1,8 +1,0 @@
-[wrap-file]
-source_url = https://github.com/llvm/llvm-project/releases/download/llvmorg-14.0.6/libunwind-14.0.6.src.tar.xz
-source_hash = 3bbe9c23c73259fe39c045dc87d0b283236ba6e00750a226b2c2aeac4a51d86b
-patch_directory = libunwind
-
-[provide]
-dependency_names = libunwind_dep
-

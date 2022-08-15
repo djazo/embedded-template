@@ -1,8 +1,0 @@
-[wrap-file]
-source_url = https://github.com/llvm/llvm-project/releases/download/llvmorg-14.0.6/libcxx-14.0.6.src.tar.xz
-source_hash = f7a9865e25a6c5175549e31609605767bf3478e8cdf8428be2c911838e7b683d
-patch_directory = libcxx
-
-[provide]
-dependency_names = libcxx_dep
-

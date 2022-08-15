@@ -1,4 +1,0 @@
-option('enable-pedantic-error', type: 'boolean', value: false, yield: true)
-option('enable-werror', type: 'boolean', value: false, yield: true)
-option('exclude-atomic-builtins', type: 'boolean', value: true, yield: true)
-

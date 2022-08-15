@@ -1,8 +1,0 @@
-[wrap-file]
-source_url = https://github.com/llvm/llvm-project/releases/download/llvmorg-14.0.6/libcxxabi-14.0.6.src.tar.xz 
-source_hash = 82fbe9033da986f6ff3092a9df31049b4b19cbe59a46c6ab54e0523b31550794
-patch_directory = libcxxabi
-
-[provides]
-dependency_names = libcxxabi_dep
-

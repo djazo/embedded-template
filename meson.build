@@ -10,25 +10,24 @@ project('Embeddedreality sdk',
   license: 'MIT',
   meson_version: '>=0.60.0')
 
-# get dependencies to build proper c++
+# freertos
 
-compiler-rt_proj = subproject('compiler-rt')
-compiler-rt_dep = compiler-rt_proj.get_variable('compiler-rt_dep')
+freertos_proj = subproject('freertos')
+freertos_dep = freertos_proj.get_variable('freertos_dep')
 
-libunwind_proj = subproject('libunwind')
-libunwind_dep = libunwind_proj.get_variable('libunwind_dep')
+# picolibc
 
-libcxxabi_proj = subproject('libcxxabi')
-libcxxabi_dep = libcxxabi_proj.get_variable('libcxxabi_dep')
+picolibc_proj = subproject('picolibc',
+  default_options: [
+    'multilib=false',
+    ]
+  )
+picolibc_dep = picolibc_proj.get_variable('picolibc_dep')
 
-libcxx_proj = subproject('libcxx')
-libcxx_dep = libcxx_proj.get_variable('libcxx_dep')
+# llvm stuff
 
-libcxx_headers_proj = subproject('libcxx-headers')
-libcxx_headers_dep = libcxx_headers_proj.get_variable('libcxx_headers_dep')
-libcxxabi_headers_proj = subproject('libcxxabi-headers')
-libcxxabi_headers_dep = libcxxabi_headers_proj.get_variable('libcxxabi_headers_dep')
-libcxxabi_proj = subproject('libcxxabi')
-libcxxabi_dep = libcxxabi_proj.get_variable('libcxxabi_dep')
-libcxx_proj = subproject('libcxx')
-libcxx_dep = libcxx_proj.get_variable('libcxx_dep')
+llvm_proj = subproject('llvm')
+compiler_rt_dep = llvm_proj.get_variable('compiler_rt_dep')
+libcxxabi_dep = llvm_proj.get_variable('libcxxabi_dep')
+libcxx_dep = llvm_proj.get_variable('libcxx_dep')
+
