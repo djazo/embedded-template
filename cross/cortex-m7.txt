@@ -1,9 +1,9 @@
 [constants]
 common_args = ['--target=armv7em-none-eabi']
-compile_args = ['-mthumb', '-mfpu=fpv4-sp-d16','-mfloat-abi=hard']
+compile_args = ['-mcpu=cortex-m7','-mthumb', '-mfpu=fpv4-sp-d16','-mfloat-abi=hard']
 
 [host_machine]
-system = 'Generic'
+system = 'baremetal'
 cpu_family = 'arm'
 cpu = 'cortex-m7'
 endian = 'little'
