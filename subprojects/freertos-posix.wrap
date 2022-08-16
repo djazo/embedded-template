@@ -1,0 +1,4 @@
+[wrap-git]
+url = git@github.com:djazo/FreeRTOS-POSIX.git
+revision = mesons
+depth = 1
