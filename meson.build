@@ -13,6 +13,16 @@ project('Embeddedreality ARM sdk',
 
 fs = import('fs')
 
+# picolibc
+
+picolibc_proj = subproject('picolibc',
+  default_options: [
+    'multilib=false',
+    'picocrt=false'
+    ]
+  )
+picolibc_dep = picolibc_proj.get_variable('picolibc_dep')
+
 # pull in the freertos
 freertos_config_proj = subproject('freertos_config')
 freertos_config_dep = freertos_config_proj.get_variable('freertos_config_dep')
@@ -26,16 +36,6 @@ freertos_dep = freertos_proj.get_variable('freertos_dep')
 # get the freertos-posix
 freertos_posix_proj = subproject('freertos-posix')
 freertos_posix_dep = freertos_posix_proj.get_variable('freertos_posix_dep')
-
-# picolibc
-
-picolibc_proj = subproject('picolibc',
-  default_options: [
-    'multilib=false',
-    'picocrt=false'
-    ]
-  )
-picolibc_dep = picolibc_proj.get_variable('picolibc_dep')
 
 # llvm stuff
 
