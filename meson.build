@@ -23,6 +23,11 @@ picolibc_proj = subproject('picolibc',
   )
 picolibc_dep = picolibc_proj.get_variable('picolibc_dep')
 
+# CMSIS 
+
+arm_cmsis_proj = subproject('arm-cmsis')
+arm_cmsis_dep = arm_cmsis_proj.get_variable('arm_cmsis_dep')
+
 # pull in the freertos
 freertos_config_proj = subproject('freertos_config')
 freertos_config_dep = freertos_config_proj.get_variable('freertos_config_dep')

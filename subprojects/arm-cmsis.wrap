@@ -1,0 +1,4 @@
+[wrap-git]
+url = git@github.com:djazo/ARM-CMSIS_5.git
+revision = mesons
+depth = 1
