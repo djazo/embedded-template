@@ -1,0 +1,4 @@
+[wrap-git]
+url = git@github.com:STMicroelectronics/cmsis_device_l5.git
+revision = master
+depth = 1
