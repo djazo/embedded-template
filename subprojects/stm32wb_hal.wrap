@@ -1,4 +1,4 @@
 [wrap-git]
-url = git@github.com:STMicroelectronics/stm32wbxx_hal_driver.git
+url = git@github.com:djazo/stm32wbxx_hal_driver.git
 revision = master
 depth = 1
