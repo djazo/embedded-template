@@ -35,9 +35,3 @@
 
 ./build/
 
-# subprojects to ignore here, they're downloaded by wrap
-
-subprojects/freertos/**
-subprojects/llvm/**
-subprojects/picolibc/**
-
