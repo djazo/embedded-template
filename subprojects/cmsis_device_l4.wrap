@@ -1,4 +1,4 @@
 [wrap-git]
-url = git@github.com:STMicroelectronics/cmsis_device_l4.git
-revision = master
+url = git@github.com:djazo/cmsis_device_l4.git
+revision = mesons
 depth = 1
