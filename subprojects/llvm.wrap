@@ -1,4 +1,0 @@
-[wrap-git]
-url = git@github.com:djazo/llvm-project.git
-revision = mesons/14.x
-depth = 1
