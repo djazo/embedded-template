@@ -1,4 +1,3 @@
 [wrap-git]
-url = git@github.com:djazo/cmsis_device_f4.git
-revision = mesons
+url = https://github.com/STMicroelectronics/cmsis_device_f5.git
 depth = 1

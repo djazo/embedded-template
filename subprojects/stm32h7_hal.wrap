@@ -1,4 +1,3 @@
 [wrap-git]
-url = git@github.com:djazo/stm32h7xx_hal_driver.git
-revision = mesons
+url = https://github.com/STMicroelectronics/stm32h7xx_hal_driver.git
 depth = 1
