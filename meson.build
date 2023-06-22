@@ -1,15 +1,24 @@
-project('Embeddedreality ARM sdk',
+project('Embeddedreality ST32 sdk',
   ['c','cpp'],
   default_options: [
+    'b_lto=true',
+    'buildtype=custom',
+    'c_std=c17',
+    'cpp_eh=none',
+    'cpp_rtti=false',
+    'cpp_std=c++17',
+    'debug=false',
+    'default_library=static',
+    'optimization=s',
+    'prefer_static=true',
+    'strip=true',
     'warning_level=3',
     'werror=false',
-    'cpp_std=c++17', 'build.cpp_std=c++17',
-    'debug=false',
-    'optimization=s',
-    'default_library=static',
     ],
   license: 'MIT',
-  meson_version: '>=0.63.0')
+  meson_version: '>=1.0.0')
+
+cmake = import('cmake')
 
 fs = import('fs')
 
@@ -36,49 +45,18 @@ d_cmsis_hal = {
 chip = meson.get_external_property('chip')
 
 if chip not in d_cmsis_hal
-  asset(0, 'No board foud for @0@'.format(chip))
+  asset(0, 'No board found for @0@'.format(chip))
 endif
 
-# picolibc
-
-picolibc_proj = subproject('picolibc',
-  default_options: [
-    'multilib=false',
-    'picocrt=false'
-    ]
-  )
-picolibc_dep = picolibc_proj.get_variable('picolibc_dep')
-
-# CMSIS 
+# ARM CMSIS
 
 arm_cmsis_proj = subproject('arm-cmsis')
 arm_cmsis_dep = arm_cmsis_proj.get_variable('arm_cmsis_dep')
 
-# cmsis ST
+# STM32 hal
+
 stm_proj_names = d_cmsis_hal.get(chip)
 stm_cmsis_dev_proj = subproject(stm_proj_names[0])
 stm_cmsis_hal_proj = subproject(stm_proj_names[1])
 stm_cmsis_dev_dep = stm_cmsis_dev_proj.get_variable('stm_cmsis_dev_dep')
 stm_cmsis_hal_dep = stm_cmsis_hal_proj.get_variable('stm_cmsis_hal_dep')
-
-# pull in the freertos
-freertos_config_proj = subproject('freertos_config')
-freertos_config_dep = freertos_config_proj.get_variable('freertos_config_dep')
-freertos_proj = subproject('freertos',
-  default_options: [
-    'freertos_port=@0@'.format(host_machine.cpu()),
-    'freertos_heap=1'
-    ]
-  )
-freertos_dep = freertos_proj.get_variable('freertos_dep')
-# get the freertos-posix
-freertos_posix_proj = subproject('freertos-posix')
-freertos_posix_dep = freertos_posix_proj.get_variable('freertos_posix_dep')
-
-# llvm stuff
-
-llvm_proj = subproject('llvm')
-compiler_rt_dep = llvm_proj.get_variable('compiler_rt_dep')
-libcxxabi_dep = llvm_proj.get_variable('libcxxabi_dep')
-libcxx_dep = llvm_proj.get_variable('libcxx_dep')
-
